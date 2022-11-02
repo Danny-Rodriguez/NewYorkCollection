@@ -1,23 +1,12 @@
 import "./App.css"
 import Navbar from "./components/Navbar"
-import Home from "./components/Home"
+import Home from "./pages/Home"
 import { Routes, Route } from "react-router-dom"
 // import { Switch, Route } from "react-router-dom"
-import Products from "./components/Products"
-import Product from "./components/Product"
-
-// function App() {
-//   return (
-//     <>
-//       <Navbar />
-//       <Switch>
-//         <Route exact path="/" component={Home} />
-//         <Route exact path="/products" component={Products} />
-//         <Home />
-//       </Switch>
-//     </>
-//   )
-// }
+import Products from "./pages/Products"
+import Product from "./pages/Product"
+import Success from "./pages/Success"
+import Cancel from "./pages/Cancel"
 
 function App() {
   return (
@@ -27,6 +16,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<Product />} />
+        <Route path="success" element={<Success />} />
+        <Route path="cancel" element={<Cancel />} />
       </Routes>
       {/* <Home /> */}
     </>
