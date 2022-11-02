@@ -1,0 +1,9 @@
+/* Navbar */
+.navbar-nav a {
+  font-size: 18px;
+}
+
+.row.py-4 > img {
+  height: 400px;
+  width: 400px;
+}

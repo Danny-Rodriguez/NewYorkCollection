@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useDispatch } from "react-redux"
-import { addCart } from "../redux/actions"
+import { addCart } from "../redux/actions/index"
 import { useParams } from "react-router-dom"
 import { NavLink } from "react-router-dom"
 import Skeleton from "react-loading-skeleton"
@@ -47,8 +47,8 @@ function Product() {
   const ShowProduct = () => {
     return (
       <>
-        <div className="col-md-6">
-          <img src={product.image} alt={product.title} height="400px" width="400px" />
+        <div className="col-md-6" style={{ width: "40%" }}>
+          <img src={product.image} alt={product.title} height="400px" width="auto" />
         </div>
         <div className="col-md-6">
           <h4 className="text-uppercase text-black-50">{product.category}</h4>
