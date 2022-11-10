@@ -1,14 +1,14 @@
 import { NavLink } from "react-router-dom"
 import { useSelector } from "react-redux"
 
-function Navbar() {
+function Navbar({ cart, getCartTotal }) {
   const state = useSelector(state => state.handleCart)
   return (
     <div>
       {/* <nav className="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-sm"> */}
       <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
         <div className="container-fluid">
-          <NavLink className="navbar-brand fw-bold fs-4" to="/">
+          <NavLink className="navbar-brand fw-bold fs-4 brand" to="/">
             NEW YORK COLLECTION
           </NavLink>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,22 +31,22 @@ function Navbar() {
                   About
                 </NavLink>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink className="nav-link" to="/contact">
                   Contact
                 </NavLink>
-              </li>
+              </li> */}
             </ul>
             <div className="buttons">
-              <button className="btn">
-                <NavLink to="/login" className="btn btn-outline-dark">
+              <button className="btn ">
+                {/* <NavLink to="/login" className="btn btn-outline-dark">
                   <i className="fa fa-sign-in me-1"></i> Login
-                </NavLink>
-                <NavLink to="/register" className="btn btn-outline-dark ms-2">
+                </NavLink> */}
+                {/* <NavLink to="/register" className="btn btn-outline-dark ms-2">
                   <i className="fa fa-user-plus me-1"></i> Register
-                </NavLink>
+                </NavLink> */}
                 <NavLink to="/cart" className="btn btn-outline-dark ms-2">
-                  <i className="fa fa-shopping-cart me-1"></i> Cart ({state.length})
+                  <i className="fa fa-shopping-cart me-1"></i> Cart ({getCartTotal()})
                 </NavLink>
               </button>
             </div>

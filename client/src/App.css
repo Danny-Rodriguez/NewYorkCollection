@@ -7,3 +7,70 @@
   height: 400px;
   width: 400px;
 }
+
+.cartImg {
+  margin-right: 50px;
+}
+
+.left-section {
+  float: left;
+  /* width: 68%; */
+}
+
+.right-section {
+  float: right;
+  padding-left: 1rem;
+  width: 32%;
+}
+
+.cartSum {
+  background: var(--color-neutral-0);
+  border: 1px solid var(--color-stroke-subtle);
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: var(--bs-btn-bg);
+  align-self: baseline;
+}
+
+.cartRow {
+  margin-top: 2em !important;
+}
+
+.clear {
+  margin-top: 2em;
+  color: white !important;
+}
+
+.footer {
+  margin-top: 1rem;
+  padding: 1rem;
+  /* background-color: rgb(235, 195, 64); */
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.aboutSocial {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.aboutPage a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.brand {
+  border: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+}
+
+.brand:hover {
+  background-color: gray;
+  color: aliceblue !important;
+}

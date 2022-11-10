@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { NavLink } from "react-router-dom"
 import Skeleton from "react-loading-skeleton"
 import "react-loading-skeleton/dist/skeleton.css"
+// const jsonProducts = require("../products.json")
 
 function Products() {
   const [data, setData] = useState([])
@@ -9,13 +10,25 @@ function Products() {
   const [loading, setLoading] = useState(false)
   let componentMounted = true
 
+  // fetch("/data.json")
+  //   .then(response => response.json())
+  //   .then(json => console.log("data", json))
+
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true)
       const response = await fetch("http://fakestoreapi.com/products")
+      // const response = await fetch("/products.json")
+      // .then(res => res.json())
+      // .then(data => console.log(data))
+      // const prod = fetch("../products.json")
+      // console.log(response.json())
+      // console.log(jsonProducts)
       if (componentMounted) {
         setData(await response.clone().json())
         setFilter(await response.json())
+        // setData(await response)
+        // setFilter(await response)
         setLoading(false)
         console.log(filter)
       }
