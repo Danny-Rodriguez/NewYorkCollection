@@ -13,6 +13,8 @@ const app = express()
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+const PORT = 4000
+
 app.use(cors())
 app.use(express.static("public"))
 // app.use(express.static(path.join(__dirname, "public")))
@@ -46,8 +48,10 @@ app.post("/checkout", async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: lineItems,
     mode: "payment",
-    success_url: "http://localhost:3000/success",
-    cancel_url: "http://localhost:3000/cancel"
+    // success_url: "http://localhost:3000/success",
+    // cancel_url: "http://localhost:3000/cancel"
+    success_url: "https://monkfish-app-979yg.ondigitalocean.app/success",
+    cancel_url: "https://monkfish-app-979yg.ondigitalocean.app/cancel"
   })
 
   res.send(
@@ -57,4 +61,4 @@ app.post("/checkout", async (req, res) => {
   )
 })
 
-app.listen(4000, () => console.log("listening on port 4000"))
+app.listen(PORT, () => console.log(`listening on port ${PORT}`))
