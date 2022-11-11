@@ -31,11 +31,11 @@ function Navbar({ cart, getCartTotal }) {
                   About
                 </NavLink>
               </li>
-              {/* <li className="nav-item">
+              <li className="nav-item">
                 <NavLink className="nav-link" to="/contact">
                   Contact
                 </NavLink>
-              </li> */}
+              </li>
             </ul>
             <div className="buttons">
               <button className="btn ">

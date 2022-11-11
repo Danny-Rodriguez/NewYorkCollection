@@ -1,6 +1,6 @@
 const fakeToStripe = {
-  1: "price_1M1NDpBaMzTOCf21hfyp4EEU",
-  2: "price_1M1fukBaMzTOCf212ehkLVJY",
+  1: "price_1M2nBLBaMzTOCf21VugM1viA",
+  2: "price_1M2nCmBaMzTOCf21z8Y1uub8",
   3: "price_1M1goIBaMzTOCf211KlSEUBR",
   4: "price_1M1gq2BaMzTOCf21dfOIJnC8",
   5: "price_1M1grkBaMzTOCf21kNd6wixf",

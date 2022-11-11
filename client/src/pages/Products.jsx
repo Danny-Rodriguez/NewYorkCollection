@@ -17,18 +17,21 @@ function Products() {
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true)
-      const response = await fetch("http://fakestoreapi.com/products")
-      // const response = await fetch("/products.json")
+      // const response = await fetch("http://fakestoreapi.com/products")
+      const response = await fetch("/products.json")
       // .then(res => res.json())
       // .then(data => console.log(data))
+      // .then(res => setData(await res.clone().json()))
+      // .then(res => setFilter(await data.json()))
       // const prod = fetch("../products.json")
       // console.log(response.json())
-      // console.log(jsonProducts)
+      // console.log(response)
       if (componentMounted) {
         setData(await response.clone().json())
         setFilter(await response.json())
-        // setData(await response)
-        // setFilter(await response)
+        // setData(await data.clone().json())
+        // setFilter(await data.json())
+
         setLoading(false)
         console.log(filter)
       }
@@ -65,6 +68,27 @@ function Products() {
   }
 
   const ShowProducts = () => {
+    // const getPrice2 = price => {
+    //   // if (!price) {
+    //   //   return
+    //   // }
+    //   if (price === 9.99) {
+    //     return (price = 799.99)?.toFixed(2)
+    //   }
+    //   if (price === 10.99) {
+    //     return (price = 299.99)?.toFixed(2)
+    //   }
+    //   if (price === 168.0) {
+    //     return (price = 1299.99)?.toFixed(2)
+    //   }
+    //   if (price === 109.95) {
+    //     return (price = 109.99)?.toFixed(2)
+    //   }
+    //   if (price === 22.3) {
+    //     return (price = 22.99)?.toFixed(2)
+    //   }
+    //   return price?.toFixed(2)
+    // }
     return (
       <>
         <div className="buttons d-flex justify-content-center mb-5 pb-5">
@@ -89,7 +113,9 @@ function Products() {
             <div className="card h-100 text-center p-5" key={product.id}>
               <img src={product.image} className="card-img-top" alt={product.title} height="250px" />
               <div className="card-body">
-                <h5 className="card-title mb-0">{product.title.substring(0, 12)}...</h5>
+                {/* <h5 className="card-title mb-0">{product.title.substring(0, 12)}...</h5> */}
+                <h5 className="card-title mb-0">{product.title.substring(0, 12)}</h5>
+                {/* <p className="card-text lead fw-bold">${product.price?.toFixed(2)}</p> */}
                 <p className="card-text lead fw-bold">${product.price}</p>
                 <NavLink to={`/products/${product.id}`} className="btn btn-outline-dark">
                   Buy Now
@@ -112,6 +138,11 @@ function Products() {
           </div>
         </div>
         <div className="row justify-content-center">{loading ? <Loading /> : <ShowProducts />}</div>
+      </div>
+      <div class="text-center">
+        <a href="#" class="btn px-5 text-uppercase">
+          <i class="bi bi-arrow-up-circle h1"></i>
+        </a>
       </div>
     </div>
   )

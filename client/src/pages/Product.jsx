@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
-import { useDispatch } from "react-redux"
-import { addCart } from "../redux/actions/index"
+// import { useDispatch } from "react-redux"
+// import { addCart } from "../redux/actions/index"
 import { useParams } from "react-router-dom"
 import { NavLink } from "react-router-dom"
 import Skeleton from "react-loading-skeleton"
@@ -20,8 +20,24 @@ function Product({ addToCart }) {
     const getProduct = async () => {
       setLoading(true)
       // const response = await fetch(`https://fakestoreapi.com/products/${id}`)
-      const response = await fetch(`https://fakestoreapi.com/products/${id}`)
-      setProduct(await response.json())
+      let products
+      let productData
+      const response = await fetch("/products.json")
+        .then(res => res.json())
+        .then(data => (products = data))
+      // console.log(typeof products[1].id)
+      // console.log(typeof parseInt(id))
+      for (let i = 0; i < products.length; i++) {
+        // console.log(products[1].id)
+        // console.log(id)
+        if (products[i].id === parseInt(id)) {
+          console.log(true)
+          productData = products[i]
+        }
+      }
+      // console.log(productData)
+      // setProduct(await response.json())
+      setProduct(productData)
       setLoading(false)
     }
     getProduct()
@@ -49,7 +65,7 @@ function Product({ addToCart }) {
     return (
       <>
         <div className="col-md-6" style={{ width: "40%" }}>
-          <img src={product.image} alt={product.title} height="400px" width="auto" />
+          <img className="productImg" src={product.image} alt={product.title} height="400px" width="auto" />
         </div>
         <div className="col-md-6">
           <h4 className="text-uppercase text-black-50">{product.category}</h4>

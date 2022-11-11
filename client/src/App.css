@@ -12,6 +12,11 @@
   margin-right: 50px;
 }
 
+.productImg {
+  max-width: inherit;
+  max-width: 400px;
+}
+
 .left-section {
   float: left;
   /* width: 68%; */
@@ -35,6 +40,7 @@
 
 .cartRow {
   margin-top: 2em !important;
+  margin-right: 1em !important;
 }
 
 .clear {
@@ -44,6 +50,7 @@
 
 .footer {
   margin-top: 1rem;
+  /* margin-top: 20vh; */
   padding: 1rem;
   /* background-color: rgb(235, 195, 64); */
   position: relative;
@@ -74,3 +81,29 @@
   background-color: gray;
   color: aliceblue !important;
 }
+
+.test-dummy {
+  border: 1px solid darkgray;
+  border-radius: 5px;
+}
+
+.test-dummy > img {
+  margin-bottom: 3px;
+}
+
+.dummyText {
+  max-width: fit-content;
+  margin-left: 0.5em;
+  color: cornflowerblue;
+}
+
+.card-title.mb-0 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/*👉.cartTitle {
+  ➡ max-width: max-content; ⬅
+  ➡ width: 178px; ⬅
+}👈*/

@@ -6,7 +6,7 @@ function About() {
       <div className="row">
         <h1>About Me</h1>
         <div className="col-sm-8">
-          Hello I'm Danny Rodriguez, have fun shopping this holiday season? <a href="https://www.linkedin.com/in/danny-alfredo-rodriguez/">Let me know what you think of the New York Collection</a>. This site is currently a <strong>work-in-progress</strong>, some things may not be finished and there will be rouch edges
+          Hello I'm Danny Rodriguez, have fun shopping this holiday season? <a href="https://www.linkedin.com/in/danny-alfredo-rodriguez/">Let me know what you think of the New York Collection</a>.
           <div className="d-flex">
             <div className="d-flex flex-column">
               <h1 className="mt-4">Credits</h1>
