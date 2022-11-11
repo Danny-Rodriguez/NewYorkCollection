@@ -17,7 +17,16 @@ app.use(express.static("public"))
 // app.use(express.static(path.join(__dirname, "public")))
 app.use(express.json())
 
-// const fakeToStripe = { 1: "price_1M1NDpBaMzTOCf21hfyp4EEU", 2: "price_1M1fukBaMzTOCf212ehkLVJY" }
+// Node serves the static files for built app
+app.use(express.static(path.resolve(__dirname, "./client/build")))
+// Handle GET requests for /api route
+app.get("/api", (req, res) => {
+  res.json({ message: "Hello from server!" })
+})
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./client/build", "index.html"))
+})
 
 app.post("/checkout", async (req, res) => {
   console.log("fake", fakeToStripe)
