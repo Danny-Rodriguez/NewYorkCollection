@@ -50,8 +50,10 @@ app.post("/checkout", async (req, res) => {
     mode: "payment",
     // success_url: "http://localhost:3000/success",
     // cancel_url: "http://localhost:3000/cancel"
-    success_url: "https://monkfish-app-979yg.ondigitalocean.app/success",
-    cancel_url: "https://monkfish-app-979yg.ondigitalocean.app/cancel"
+    // success_url: "https://monkfish-app-979yg.ondigitalocean.app/success",
+    // cancel_url: "https://monkfish-app-979yg.ondigitalocean.app/cancel"
+    success_url: "https://newyorkcollection.shop/success",
+    cancel_url: "https://newyorkcollection.shop/cancel"
   })
 
   res.send(

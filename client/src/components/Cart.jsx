@@ -7,7 +7,7 @@ function Cart({ cart, addToCart, removeFromCart, clearCart, removeOneFromCart, g
   const checkout = async () => {
     // await fetch("http://localhost:4000/checkout", {
     // await fetch(document.location.origin + "/checkout", {
-    await fetch("https://monkfish-app-979yg.ondigitalocean.app/checkout", {
+    await fetch("https://newyorkcollection.shop/checkout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
