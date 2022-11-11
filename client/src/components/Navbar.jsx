@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom"
-import { useSelector } from "react-redux"
+// import { useSelector } from "react-redux"
 
 function Navbar({ cart, getCartTotal }) {
-  const state = useSelector(state => state.handleCart)
+  // const state = useSelector(state => state.handleCart)
   return (
     <div>
       {/* <nav className="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-sm"> */}

@@ -139,9 +139,9 @@ function Products() {
         </div>
         <div className="row justify-content-center">{loading ? <Loading /> : <ShowProducts />}</div>
       </div>
-      <div class="text-center">
-        <a href="#" class="btn px-5 text-uppercase">
-          <i class="bi bi-arrow-up-circle h1"></i>
+      <div className="text-center">
+        <a href="#" className="btn px-5 text-uppercase">
+          <i className="bi bi-arrow-up-circle h1"></i>
         </a>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux"
+// import { useSelector } from "react-redux"
 import Product from "../pages/Product"
 
 function Cart({ cart, addToCart, removeFromCart, clearCart, removeOneFromCart, getCartTotal }) {

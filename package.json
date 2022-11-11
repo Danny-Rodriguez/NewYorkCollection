@@ -1,5 +1,5 @@
 {
-  "name": "ecommercereduxfetch",
+  "name": "newyorkcollection",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Danny-Rodriguez/eCommerceReduxFetch.git"
+    "url": "git+https://github.com/Danny-Rodriguez/NewYorkCollection.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Danny-Rodriguez/eCommerceReduxFetch/issues"
+    "url": "https://github.com/Danny-Rodriguez/NewYorkCollection/issues"
   },
-  "homepage": "https://github.com/Danny-Rodriguez/eCommerceReduxFetch#readme",
+  "homepage": "https://github.com/Danny-Rodriguez/NewYorkCollection#readme",
   "dependencies": {
     "body-parser": "^1.20.1",
     "cors": "^2.8.5",
