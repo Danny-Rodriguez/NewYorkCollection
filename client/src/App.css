@@ -189,11 +189,11 @@ img[src="https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg"]
   .card {
     align-items: center;
   }
-  .card-img,
+  /*👉  .card-img,
   .card-img-bottom,
   .card-img-top {
     width: max-content !important;
-  }
+  }👈*/
   .contactPage {
     margin-left: 1em;
     margin-right: 1em;
