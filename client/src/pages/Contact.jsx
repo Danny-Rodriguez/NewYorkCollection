@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <>
       <h1 className="text-center mt-4">Contact</h1>
-      <div>
+      <div className="contactPage">
         <p className="text-center lead">Great ways to contact me regarding my work and portfolio</p>
         <p className="text-center mt-4">
           <strong>Email:</strong> <a href="mailto:danny.al.rodriguez@gmail.com">danny.al.rodriguez@gmail.com</a>
@@ -15,7 +15,7 @@ export default function Contact() {
         <p className="text-center">
           <strong>GitHub:</strong> <a href="https://github.com/Danny-Rodriguez">https://github.com/Danny-Rodriguez</a>
         </p>
-        <p className="text-center mt-4">Message me on LinkedIn or Email for my phone number!</p>
+        <p className="text-center mt-4 messageMe">Message me on LinkedIn or Email for my phone number!</p>
       </div>
     </>
   )

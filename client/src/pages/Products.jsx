@@ -91,7 +91,7 @@ function Products() {
     // }
     return (
       <>
-        <div className="buttons d-flex justify-content-center mb-5 pb-5">
+        <div className="category buttons d-flex justify-content-center mb-5 pb-5">
           <button className="btn btn-outline-dark me-2" onClick={() => setFilter(data)}>
             All
           </button>
@@ -109,7 +109,7 @@ function Products() {
           </button>
         </div>
         {filter.map((product, idx) => (
-          <div className="col-md-3 mb-4" key={idx}>
+          <div className="col-md-4 col-lg-3 mb-4" key={idx}>
             <div className="card h-100 text-center p-5" key={product.id}>
               <img src={product.image} className="card-img-top" alt={product.title} height="250px" />
               <div className="card-body">

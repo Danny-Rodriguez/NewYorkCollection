@@ -35,19 +35,19 @@ function Cart({ cart, addToCart, removeFromCart, clearCart, removeOneFromCart, g
       <h1 className="mt-3 text-center d-flex justify-content-center">
         Cart <p className="text-muted">&nbsp;({getCartTotal()}) items</p>{" "}
       </h1>
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center checkoutView">
         <div className="cartList d-flex flex-column">
           {cart.map((product, idx) => (
             <div className="row cartRow" key={idx}>
-              <div className="d-flex justify-content-center align-items-center">
+              <div className="productInCart d-flex justify-content-center align-items-center">
                 <img className="cartImg" src={product.image} alt={product.title} height="200px" width="180px" />
                 <div className="col-md-3">
-                  <h3 className="cartTitle">{product.title}</h3>
-                  <div className="d-flex flex-column">
+                  <h3 className="cartTitle">{product.title.substring(0, 20).concat("...")}</h3>
+                  <div className="cartPriceQty d-flex flex-column">
                     <div>Price: {product.price}</div>
                     <p>Quantity: {product.quantity}</p>
                   </div>
-                  <div className="d-flex">
+                  <div className="countBtns d-flex">
                     <button className="btn btn-outline-dark me-4" onClick={() => addToCart(product)}>
                       <i className="fa fa-plus"></i>
                     </button>
@@ -64,7 +64,7 @@ function Cart({ cart, addToCart, removeFromCart, clearCart, removeOneFromCart, g
           ))}
         </div>
         {cart.length !== 0 ? (
-          <div className="d-flex flex-column">
+          <div className="d-flex flex-column checkoutBtns">
             <div className="cartSum d-flex flex-column">
               <div className="items">Items: {getCartTotal()}</div>
               <div className="shipping">Shipping: *Free*</div>
@@ -90,7 +90,7 @@ function Cart({ cart, addToCart, removeFromCart, clearCart, removeOneFromCart, g
             </div>
           </div>
         ) : (
-          <h1 className="text-center">Checkout the shop and find your style!</h1>
+          <h1 className="text-center">Check out the shop and find your style!</h1>
         )}
       </div>
     </>

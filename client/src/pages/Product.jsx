@@ -64,7 +64,7 @@ function Product({ addToCart }) {
   const ShowProduct = () => {
     return (
       <>
-        <div className="col-md-6" style={{ width: "40%" }}>
+        <div className="col-md-6 productArea">
           <img className="productImg" src={product.image} alt={product.title} height="400px" width="auto" />
         </div>
         <div className="col-md-6">
