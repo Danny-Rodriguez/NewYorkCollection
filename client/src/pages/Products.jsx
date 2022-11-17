@@ -111,7 +111,7 @@ function Products() {
         {filter.map((product, idx) => (
           <div className="col-md-4 col-lg-3 mb-4" key={idx}>
             <div className="card h-100 text-center p-5" key={product.id}>
-              <img src={product.image} className="card-img-top" alt={product.title} height="250px" />
+              <img src={product.image} className="allProducts card-img-top" alt={product.title} height="250px" />
               <div className="card-body">
                 {/* <h5 className="card-title mb-0">{product.title.substring(0, 12)}...</h5> */}
                 <h5 className="card-title mb-0">{product.title.substring(0, 12)}</h5>
