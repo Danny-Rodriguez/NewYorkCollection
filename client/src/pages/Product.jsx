@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 // import { useDispatch } from "react-redux"
 // import { addCart } from "../redux/actions/index"
-import { useParams } from "react-router-dom"
-import { NavLink } from "react-router-dom"
-import Skeleton from "react-loading-skeleton"
-import "react-loading-skeleton/dist/skeleton.css"
+import { useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 function Product({ addToCart }) {
-  const { id } = useParams()
-  const [product, setProduct] = useState([])
-  const [loading, setLoading] = useState(false)
+  const { id } = useParams();
+  const [product, setProduct] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   // const dispatch = useDispatch()
   // const addProduct = product => {
@@ -18,30 +18,30 @@ function Product({ addToCart }) {
 
   useEffect(() => {
     const getProduct = async () => {
-      setLoading(true)
+      setLoading(true);
       // const response = await fetch(`https://fakestoreapi.com/products/${id}`)
-      let products
-      let productData
+      let products;
+      let productData;
       const response = await fetch("/products.json")
         .then(res => res.json())
-        .then(data => (products = data))
+        .then(data => (products = data));
       // console.log(typeof products[1].id)
       // console.log(typeof parseInt(id))
       for (let i = 0; i < products.length; i++) {
         // console.log(products[1].id)
         // console.log(id)
         if (products[i].id === parseInt(id)) {
-          console.log(true)
-          productData = products[i]
+          // console.log(true)
+          productData = products[i];
         }
       }
       // console.log(productData)
       // setProduct(await response.json())
-      setProduct(productData)
-      setLoading(false)
-    }
-    getProduct()
-  }, [])
+      setProduct(productData);
+      setLoading(false);
+    };
+    getProduct();
+  }, []);
 
   const Loading = () => {
     return (
@@ -59,8 +59,8 @@ function Product({ addToCart }) {
           <Skeleton height={50} width={100} style={{ marginLeft: 6 }} />
         </div>
       </>
-    )
-  }
+    );
+  };
   const ShowProduct = () => {
     return (
       <>
@@ -84,8 +84,8 @@ function Product({ addToCart }) {
           </NavLink>
         </div>
       </>
-    )
-  }
+    );
+  };
 
   return (
     <div>
@@ -93,7 +93,7 @@ function Product({ addToCart }) {
         <div className="row py-4">{loading ? <Loading /> : <ShowProduct />}</div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Product
+export default Product;

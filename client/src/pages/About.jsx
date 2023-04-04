@@ -46,7 +46,7 @@ function About() {
         </div>
 
         <div className="col-sm-4 d-flex flex-column">
-          <img src="https://danny-rodriguez.github.io/portfolio/img/professional-shot.jpg" className="portrait" referrerPolicy="no-referrer" alt="Danny Rodriguez LinkedIn Photo" width="416" height="562" />
+          <img src="https://danny-rodriguez.github.io/portfolio/img/professional-shot.jpg" className="portrait" referrerPolicy="no-referrer" alt="Danny Rodriguez LinkedIn" width="416" height="562" />
           <p>
             <strong>Location:</strong> San Diego, CA
           </p>

@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react"
-import { NavLink } from "react-router-dom"
-import Skeleton from "react-loading-skeleton"
-import "react-loading-skeleton/dist/skeleton.css"
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 // const jsonProducts = require("../products.json")
 
 function Products() {
-  const [data, setData] = useState([])
-  const [filter, setFilter] = useState(data)
-  const [loading, setLoading] = useState(false)
-  let componentMounted = true
+  const [data, setData] = useState([]);
+  const [filter, setFilter] = useState(data);
+  const [loading, setLoading] = useState(false);
+  let componentMounted = true;
 
   // fetch("/data.json")
   //   .then(response => response.json())
@@ -16,31 +16,23 @@ function Products() {
 
   useEffect(() => {
     const getProducts = async () => {
-      setLoading(true)
+      setLoading(true);
       // const response = await fetch("http://fakestoreapi.com/products")
-      const response = await fetch("/products.json")
-      // .then(res => res.json())
-      // .then(data => console.log(data))
-      // .then(res => setData(await res.clone().json()))
-      // .then(res => setFilter(await data.json()))
-      // const prod = fetch("../products.json")
-      // console.log(response.json())
-      // console.log(response)
-      if (componentMounted) {
-        setData(await response.clone().json())
-        setFilter(await response.json())
-        // setData(await data.clone().json())
-        // setFilter(await data.json())
+      const response = await fetch("/products.json");
 
-        setLoading(false)
-        console.log(filter)
+      if (componentMounted) {
+        setData(await response.clone().json());
+        setFilter(await response.json());
+
+        setLoading(false);
+        // console.log(filter)
       }
       return () => {
-        componentMounted = false
-      }
-    }
-    getProducts()
-  }, [])
+        componentMounted = false;
+      };
+    };
+    getProducts();
+  }, []);
 
   const Loading = () => {
     return (
@@ -58,37 +50,16 @@ function Products() {
           <Skeleton height={350} />
         </div>
       </>
-    )
-  }
+    );
+  };
 
   const filterProduct = cat => {
-    console.log(data)
-    const updatedList = data.filter(x => x.category === cat)
-    setFilter(updatedList)
-  }
+    // console.log(data)
+    const updatedList = data.filter(x => x.category === cat);
+    setFilter(updatedList);
+  };
 
   const ShowProducts = () => {
-    // const getPrice2 = price => {
-    //   // if (!price) {
-    //   //   return
-    //   // }
-    //   if (price === 9.99) {
-    //     return (price = 799.99)?.toFixed(2)
-    //   }
-    //   if (price === 10.99) {
-    //     return (price = 299.99)?.toFixed(2)
-    //   }
-    //   if (price === 168.0) {
-    //     return (price = 1299.99)?.toFixed(2)
-    //   }
-    //   if (price === 109.95) {
-    //     return (price = 109.99)?.toFixed(2)
-    //   }
-    //   if (price === 22.3) {
-    //     return (price = 22.99)?.toFixed(2)
-    //   }
-    //   return price?.toFixed(2)
-    // }
     return (
       <>
         <div className="category buttons d-flex justify-content-center mb-5 pb-5">
@@ -125,8 +96,8 @@ function Products() {
           </div>
         ))}
       </>
-    )
-  }
+    );
+  };
 
   return (
     <div>
@@ -145,7 +116,7 @@ function Products() {
         </a>
       </div>
     </div>
-  )
+  );
 }
 
-export default Products
+export default Products;

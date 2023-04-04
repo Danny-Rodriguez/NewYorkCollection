@@ -1,8 +1,9 @@
 // import { useSelector } from "react-redux"
-import Product from "../pages/Product"
+// import Product from "../pages/Product"
+import DummyCreditCard from "./DummyCreditCard";
 
 function Cart({ cart, addToCart, removeFromCart, clearCart, removeOneFromCart, getCartTotal }) {
-  console.log(cart)
+  // console.log(cart)
 
   const checkout = async () => {
     // await fetch("http://localhost:4000/checkout", {
@@ -16,22 +17,24 @@ function Cart({ cart, addToCart, removeFromCart, clearCart, removeOneFromCart, g
       body: JSON.stringify({ items: cart })
     })
       .then(response => {
-        return response.json()
+        return response.json();
       })
       .then(response => {
         if (response.url) {
-          window.location.assign(response.url) //forwarding user to stripe
+          window.location.assign(response.url); //forwarding user to stripe
         }
-      })
-  }
+      });
+  };
 
   const getTotalSum = () => {
-    return cart.reduce((sum, { price, quantity }) => sum + price * quantity, 0)?.toFixed(2)
-    console.log("cart length", cart.length)
-  }
+    return cart.reduce((sum, { price, quantity }) => sum + price * quantity, 0)?.toFixed(2);
+    // console.log("cart length", cart.length)
+  };
 
   return (
-    <>
+    <div className="d-flex flex-column">
+      {cart.length !== 0 && <DummyCreditCard />}
+
       <h1 className="mt-3 text-center d-flex justify-content-center">
         Cart <p className="text-muted">&nbsp;({getCartTotal()}) items</p>{" "}
       </h1>
@@ -82,19 +85,13 @@ function Cart({ cart, addToCart, removeFromCart, clearCart, removeOneFromCart, g
                 Clear Cart
               </button>
             </div>
-            <div className="test-dummy mt-3">
-              <p className="dummyText">
-                <em>**Use this test-dummy card to complete your mock order!**</em>
-              </p>
-              <img src="/assets/test-dummy-card.png" alt="test dummy card" width="300" />
-            </div>
           </div>
         ) : (
           <h1 className="text-center">Check out the shop and find your style!</h1>
         )}
       </div>
-    </>
-  )
+    </div>
+  );
 }
 
-export default Cart
+export default Cart;

@@ -102,6 +102,8 @@ img[src="https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg"]
 .test-dummy {
   border: 1px solid darkgray;
   border-radius: 5px;
+  max-width: min-content;
+  align-self: center;
 }
 
 .test-dummy > img {
@@ -134,9 +136,9 @@ img[src="https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg"]
 }
 
 @media (max-width: 719px) {
-  .test-dummy {
+  /*👉  .test-dummy {
     display: none;
-  }
+  }👈*/
   .checkoutView {
     flex-direction: column-reverse;
     align-items: center !important;
