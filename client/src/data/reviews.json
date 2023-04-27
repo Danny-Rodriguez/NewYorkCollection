@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "entries": [
+      { "title": "A Great Backpack for going out and about.", "description": "If you're looking for a laptop backpack that is stylish, and functional, you might want to check out the Fjallraven. It has a sleek design that can fit in any setting. It has a spacious main compartment that can fit a 15-inch laptop, as well as several pockets and organizers for your essentials. I bought this backpack for a weekend trip and I was impressed by how much it could hold and how easy it was to access my stuff. It also fit perfectly under the airplane seat and didn't strain my shoulders or back. I would recommend this backpack to anyone who needs a versatile and reliable laptop backpack for traveling or commuting.", "reviewer": "Esteban Miranda - January 12th, 2023" },
+      { "title": "Love this!", "description": "I bought this backpack a few months ago and I'm very happy with it. It's spacious enough to fit my laptop, books, and other essentials, but not too bulky or heavy. The fabric is sturdy and water-resistant, and the folding design is easy to use and secure. I like the simple and classic look of the backpack, and the color is nice too. The backpack is comfortable to wear and adjustable to fit different body types. I use it for work, school, and hiking, and it suits all these occasions well. I can't recommend this bag enough!", "reviewer": "Samantha Goodrich - December 9th, 2021" }
+    ]
+  },
+  {
+    "id": 2,
+    "entries": [
+      { "title": "A stylish and comfortable henley shirt", "description": "If you're looking for a casual and premium slim fit t-shirt, you might want to check out this henley shirt from Men's Clothing. It has a contrast raglan long sleeve, a three-button placket, and a round neck. The fabric is light weight and soft, making it breathable and comfortable to wear. The shirt is also durable and well-stitched, and it comes in various colors to suit your preference. Whether you're a diehard baseball fan or just want to add some style to your wardrobe, this henley shirt is a great option for you.", "reviewer": "Nathan Smith - June 24th, 2023" },
+      { "title": "A great casual shirt", "description": "This is a great for socials, a baseball game, you name it. The contrast raglan long sleeve gives it a sporty vibe, while the three-button placket adds some style and versatility. The fabric is light weight and soft, making it breathable and comfortable to wear. It also fits well and has a nice slim-fitting style that flatters your body shape. The price is reasonable for the quality and durability of this shirt.", "reviewer": "Amar Porter - April 2nd, 2022" },
+      { "title": "Great shirt for the price", "description": "I bought this shirt for my husband and he loves it. It's comfortable, stylish, and fits well. The fabric is soft and breathable, and the color is nice too. The shirt is well-made and durable, and it's easy to care for. Overall, this is a great shirt for the price.", "reviewer": "Samantha Goodrich - December 9th, 2021" }
+    ]
+  }
+]
