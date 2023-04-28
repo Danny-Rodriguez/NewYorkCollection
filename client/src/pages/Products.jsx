@@ -72,7 +72,7 @@ function Products() {
           <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("women's clothing")}>
             Women's Clothing
           </button>
-          <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("jewelery")}>
+          <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("jewelry")}>
             Jewelry
           </button>
           <button className="btn btn-outline-dark me-2" onClick={() => filterProduct("electronics")}>
