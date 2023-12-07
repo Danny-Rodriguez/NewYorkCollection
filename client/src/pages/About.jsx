@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 function About() {
   return (
@@ -28,7 +28,7 @@ function About() {
               <h3>Favorite Books</h3>
               <a href="https://www.amazon.com/Design-Everyday-Things-Revised-Expanded/dp/0465050654">The Design of Everyday Things</a>
               <a href="https://www.amazon.com/Originals-audiobook/dp/B01A7Q61LI/">Originals</a>
-              <a href="https://www.amazon.com/How-Win-Friends-Influence-People/dp/B0006IU7JK/">How to Make Friends and Influence People</a>
+              <a href="https://www.amazon.com/Good-They-Cant-Ignore-You/dp/1455509124">So Good They Can't Ignore You</a>
               <a href="https://www.amazon.com/Triumph-City-Greatest-Invention-Healthier/dp/0143120549/">Triumph of the City</a>
               <a href="https://www.amazon.com/Jobs-Be-Done-Theory-Practice/dp/B08R8ZGPXP/">Jobs to Be Done</a>
 
@@ -71,7 +71,7 @@ function About() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default About
+export default About;

@@ -1,3 +1,8 @@
-# New York Collection
+<p align="center">
+  <img src="public/assets/banner.png" />
+</p>
 
-This is a site that allows you to buy some clothes and electronics for the holidays and allow you to experience the mock checkout as well
+<h1 align="center">New York Collection</h1>
+<p align="center">
+  Check out the hottest new styles this Season!
+</p>
