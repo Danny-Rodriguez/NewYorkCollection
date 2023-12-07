@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/assets/banner.png" />
+  <img src="client/public/assets/banner.png" />
 </p>
 
 <h1 align="center">New York Collection</h1>
