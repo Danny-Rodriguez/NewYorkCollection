@@ -80,9 +80,9 @@ function Cart({ cart, addToCart, removeFromCart, clearCart, removeOneFromCart, g
                   <br /> Total: ${getTotalSum()}
                 </div>
                 <br />
-                <a className="btn btn-dark" onClick={checkout}>
+                <button className="btn btn-dark" onClick={checkout}>
                   Go to Check Out
-                </a>
+                </button>
               </div>
               <button className="clear btn btn-danger" onClick={clearCart}>
                 Clear Cart
