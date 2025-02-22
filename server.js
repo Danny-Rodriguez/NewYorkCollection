@@ -13,12 +13,36 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const PORT = 4000;
+const PORT = 3000;
 
 app.use(cors());
 app.use(express.static("public"));
-// app.use(express.static(path.join(__dirname, "public")))
 app.use(express.json());
+
+// Checkout endpoint
+app.post("/checkout", async (req, res) => {
+  const items = req.body.items;
+  let lineItems = [];
+  items.forEach(item => {
+    lineItems.push({
+      price: fakeToStripe[item.id],
+      quantity: item.quantity
+    });
+  });
+
+  const session = await stripe.checkout.sessions.create({
+    line_items: lineItems,
+    mode: "payment",
+    success_url: "http://localhost:3000/success",
+    cancel_url: "http://localhost:3000/cancel"
+    // success_url: "https://monkfish-app-979yg.ondigitalocean.app/success",
+    // cancel_url: "https://monkfish-app-979yg.ondigitalocean.app/cancel"
+    // success_url: "https://newyorkcollection.shop/success",
+    // cancel_url: "https://newyorkcollection.shop/cancel"
+  });
+
+  res.json({ url: session.url });
+});
 
 // Node serves the static files for built app
 app.use(express.static(path.resolve(__dirname, "./client/build")));
@@ -27,40 +51,9 @@ app.get("/api", (req, res) => {
   res.json({ message: "Hello from server!" });
 });
 
+// This should be the last route
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
-});
-
-app.post("/checkout", async (req, res) => {
-  // console.log("fake", fakeToStripe)
-  // console.log(req.body.items)
-  const items = req.body.items;
-  let lineItems = [];
-  items.forEach(item => {
-    lineItems.push({
-      // price: item.id,
-      price: fakeToStripe[item.id],
-      quantity: item.quantity
-    });
-  });
-  // console.log("lineItems", lineItems)
-
-  const session = await stripe.checkout.sessions.create({
-    line_items: lineItems,
-    mode: "payment",
-    // success_url: "http://localhost:3000/success",
-    // cancel_url: "http://localhost:3000/cancel"
-    // success_url: "https://monkfish-app-979yg.ondigitalocean.app/success",
-    // cancel_url: "https://monkfish-app-979yg.ondigitalocean.app/cancel"
-    success_url: "https://newyorkcollection.shop/success",
-    cancel_url: "https://newyorkcollection.shop/cancel"
-  });
-
-  res.send(
-    JSON.stringify({
-      url: session.url
-    })
-  );
 });
 
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));
