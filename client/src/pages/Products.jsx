@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -8,7 +8,7 @@ function Products() {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
-  let componentMounted = true;
+  const componentMounted = useRef(true);
 
   // fetch("/data.json")
   //   .then(response => response.json())
@@ -20,7 +20,7 @@ function Products() {
       // const response = await fetch("http://fakestoreapi.com/products")
       const response = await fetch("/products.json");
 
-      if (componentMounted) {
+      if (componentMounted.current) {
         setData(await response.clone().json());
         setFilter(await response.json());
 
@@ -28,7 +28,7 @@ function Products() {
         // console.log(filter)
       }
       return () => {
-        componentMounted = false;
+        componentMounted.current = false;
       };
     };
     getProducts();
@@ -111,9 +111,9 @@ function Products() {
         <div className="row justify-content-center">{loading ? <Loading /> : <ShowProducts />}</div>
       </div>
       <div className="text-center">
-        <a href="#" className="btn px-5 text-uppercase">
+        <button onClick={() => window.scrollTo(0, 0)} className="btn px-5 text-uppercase">
           <i className="bi bi-arrow-up-circle h1"></i>
-        </a>
+        </button>
       </div>
     </div>
   );

@@ -22,29 +22,22 @@ function Product({ addToCart }) {
   useEffect(() => {
     const getProduct = async () => {
       setLoading(true);
-      // const response = await fetch(`https://fakestoreapi.com/products/${id}`)
       let products;
       let productData;
-      const response = await fetch("/products.json")
+      await fetch("/products.json")
         .then(res => res.json())
         .then(data => (products = data));
-      // console.log(typeof products[1].id)
-      // console.log(typeof parseInt(id))
+
       for (let i = 0; i < products.length; i++) {
-        // console.log(products[1].id)
-        // console.log(id)
         if (products[i].id === parseInt(id)) {
-          // console.log(true)
           productData = products[i];
         }
       }
-      // console.log(productData)
-      // setProduct(await response.json())
       setProduct(productData);
       setLoading(false);
     };
     getProduct();
-  }, []);
+  }, [id]);
 
   for (let i = 0; i < reviewsData.length; i++) {
     if (reviewsData[i].id === parseInt(id)) {
