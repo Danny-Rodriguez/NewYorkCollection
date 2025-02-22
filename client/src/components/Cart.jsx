@@ -6,24 +6,27 @@ function Cart({ cart, addToCart, removeFromCart, clearCart, removeOneFromCart, g
   // console.log(cart)
 
   const checkout = async () => {
-    // await fetch("http://localhost:4000/checkout", {
-    // await fetch(document.location.origin + "/checkout", {
-    await fetch("https://newyorkcollection.shop/checkout", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      // body: JSON.stringify({ items: cart.items })
-      body: JSON.stringify({ items: cart })
-    })
-      .then(response => {
-        return response.json();
-      })
-      .then(response => {
-        if (response.url) {
-          window.location.assign(response.url); //forwarding user to stripe
-        }
+    try {
+      const response = await fetch("http://localhost:3000/checkout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ items: cart })
       });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      if (data.url) {
+        window.location.assign(data.url); // forwarding user to stripe
+      }
+    } catch (error) {
+      console.error("Checkout error:", error);
+      alert("There was an error processing your checkout. Please try again.");
+    }
   };
 
   const getTotalSum = () => {

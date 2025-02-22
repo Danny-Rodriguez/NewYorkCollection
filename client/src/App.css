@@ -66,15 +66,12 @@ img[src="https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg"]
 }
 
 .footer {
-  margin-top: 1rem;
-  /* margin-top: 20vh; */
+  flex-shrink: 0;
   padding: 1rem;
-  /* background-color: rgb(235, 195, 64); */
-  position: relative;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  text-align: center;
+  margin-top: auto;
 }
+
 
 .aboutSocial {
   display: flex;
@@ -120,6 +117,17 @@ img[src="https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg"]
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+/* Layout */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1 0 auto;
 }
 
 @media (max-width: 820px) {

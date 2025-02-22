@@ -63,16 +63,18 @@ function App() {
   return (
     <>
       <Navbar cart={cart} getCartTotal={getCartTotal} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/products/:id" element={<Product cart={cart} addToCart={addToCart} />} />
-        <Route path="success" element={<Success />} />
-        <Route path="cancel" element={<Cancel />} />
-        <Route path="cart" element={<Cart cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} removeOneFromCart={removeOneFromCart} getCartTotal={getCartTotal} />} />
-        <Route path="about" element={<About />} />
-        <Route path="contact" element={<Contact />} />
-      </Routes>
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<Product cart={cart} addToCart={addToCart} />} />
+          <Route path="success" element={<Success />} />
+          <Route path="cancel" element={<Cancel />} />
+          <Route path="cart" element={<Cart cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} removeOneFromCart={removeOneFromCart} getCartTotal={getCartTotal} />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+        </Routes>
+      </main>
       <Footer />
     </>
   );
