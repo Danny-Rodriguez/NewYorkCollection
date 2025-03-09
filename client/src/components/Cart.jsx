@@ -7,7 +7,7 @@ function Cart({ cart, addToCart, removeFromCart, clearCart, removeOneFromCart, g
 
   const checkout = async () => {
     try {
-      const response = await fetch("http://localhost:3000/checkout", {
+      const response = await fetch("https://new-york-collection.vercel.app/checkout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
