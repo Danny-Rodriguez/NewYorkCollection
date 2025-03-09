@@ -5,7 +5,8 @@ const dotenv = require("dotenv");
 dotenv.config({ path: "./config/.env.local" });
 const stripe = require("stripe")(`${process.env.STRIPE_SECRET}`);
 const bodyParser = require("body-parser");
-const fakeToStripe = require("./fakeToStripe").fakeToStripe;
+const fs = require("fs");
+const fakeToStripe = JSON.parse(fs.readFileSync("./fakeToStripe.json", "utf8"));
 
 // console.log("fake", fakeToStripe)
 
